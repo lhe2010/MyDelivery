@@ -1,6 +1,7 @@
 package org.androidtown.mydelivery;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -60,11 +61,25 @@ public class MainActivity extends AppCompatActivity {
         host.setup();
 
         // ds 추가
+        //MyItem(상품명, 날짜, 요일, 년/월/일, 배송상태, 택배사)
         ds1.add(new MyItem("노트북", "1일", "월요일", "2017/1/1", "배송중", "서울택배"));
         ds2.add(new MyItem("냉장고", "2일", "화요일", "2017/1/2", "배송완료", "성신택배"));
         ds1.add(new MyItem("김치냉장고", "3일", "수요일", "2017/1/3", "배송중", "삼성택배"));
         Adapter1.notifyDataSetChanged();
         Adapter2.notifyDataSetChanged();
+        Adapter3.notifyDataSetChanged();
+        Adapter4.notifyDataSetChanged();
+
+        //7번 페이지에서 받아온 택배 정보 추가
+        Intent intent7 = new Intent();
+        String postname = intent7.getStringExtra("postname");
+        String postnum = intent7.getStringExtra("postnum");
+        String postcompany = intent7.getStringExtra("postcompany");
+
+        if(postname != null && postnum != null) {
+            ds1.add(new MyItem(postname, null, null, null, "배송중",postcompany));
+            Adapter1.notifyDataSetChanged();
+        }
 
         //Tab 1
         TabHost.TabSpec spec = host.newTabSpec("Tab One");

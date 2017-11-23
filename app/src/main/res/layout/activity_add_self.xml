@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:background="@drawable/round"
+            android:hint="상품명" />
+
+        <EditText
+            android:id="@+id/num"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:background="@drawable/round"
+            android:hint="운송장 번호" />
+
+        <Spinner
+            android:id="@+id/myspinner"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:background="@drawable/round"
+            android:prompt="@string/prompt" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="right">
+
+        <Button
+            android:id="@+id/sregi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onButton"
+            android:text="연속 등록" />
+
+        <Button
+            android:id="@+id/regi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onButton"
+            android:text="등록" />
+    </LinearLayout>
+</LinearLayout>
