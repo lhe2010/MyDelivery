@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">MyDelivery7</string>
+    <string name="prompt">택배사 선택</string>
+    <string-array name="company">
+        <item>cj대한통운</item>
+        <item>한진택배"</item>
+        <item>롯데택배</item>
+        <item>우체국택배</item>
+        <item>로젠택배</item>
+        <item>KGB택배</item>
+        <item>일양로지스</item>
+        <item>EMS</item>
+        <item>DHL</item>
+        <item>FedEx</item>
+    </string-array>
+</resources>
